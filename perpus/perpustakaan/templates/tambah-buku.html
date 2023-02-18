@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="container">
+<div class="col-md4">
+    <h6>
+        <a href="{% url 'buku' %}" class="btn btn-alert">Halaman Utama</a>
+    </h6>
+    {% if pesans %}
+    <div class = "alert alert-success">
+        {{pesans}}
+    </div>
+    {% endif %}
+    <form action="/tambah-buku/" method="post">
+        {%csrf_token%}
+        <!-- csrf adalah untuk mengamankan -->
+        {{ forms.as_p}}
+        <!-- as_p untuk merubah format, forms di class tambah_buku di view.py-->
+        <button class="btn btn-primary">Tambah Buku</button>
+
+    </form>
+    
+    
+</div>
+</div>
+
+{% endblock %}

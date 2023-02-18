@@ -1,0 +1,39 @@
+<!--tambahkan load-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERPUSTAKAAN SEKOLAH SMK</title>
+    <!--memanggil css dari static-->
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <!--untuk memanggil css buatan sendiri-->
+    <!-- <link rel="stylesheet" href="{% static '/css/style.css' %}"> -->
+    <script type = "text/javascript">
+        <!--
+           function Warn() {
+              alert ("This is a warning message!");
+              document.write ("This is a warning message!");
+           }
+        //-->
+     </script>   
+</head>
+<body>
+    
+    <!--Untuk menampilkan judul-->
+    {%include 'judul.html'%}
+    <!-- bagian ini yang akan diisi oleh konten konten-->
+    {% block content %}
+<!-- ini akan extends masing masing halaman-->
+    {% endblock%}
+
+<!--memanggil jquery dan bootstrap js-->
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> -->
+<script src="{% static '/js/jquery-3.6.3.min.js' %}"></script>
+<script src="{% static '/js/bootstrap.min.js' %}"></script>
+
+
+</body>
+</html>

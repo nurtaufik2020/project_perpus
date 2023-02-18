@@ -1,0 +1,9 @@
+<center>
+    <h1>PERPUSTAKAAN</h1> 
+    
+    <!-- untuk menghilangkan user anonymous jika logout maka menggunakan script berikut is_authenticated -->
+    {% if user.is_authenticated %}
+        <p>halo, <strong>{{user}}!</strong> <a href="{%url 'keluar' %}">Keluar</a></p>
+    {% endif %}
+    <!-- untuk akses variabel user menggunakan kurung kurawal 2 -->
+</center>
